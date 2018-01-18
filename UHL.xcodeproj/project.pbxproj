@@ -19,6 +19,13 @@
 		0A7BAF972010A01C00C57D1C /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7BAF962010A01C00C57D1C /* InterfaceController.swift */; };
 		0A7BAF992010A01C00C57D1C /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7BAF982010A01C00C57D1C /* ExtensionDelegate.swift */; };
 		0A7BAF9B2010A01C00C57D1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A7BAF9A2010A01C00C57D1C /* Assets.xcassets */; };
+		0A7BAFAB2010A0D100C57D1C /* ScheduleRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7BAFAA2010A0D100C57D1C /* ScheduleRow.swift */; };
+		0A7BAFAD2010A0F800C57D1C /* ScheduleInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7BAFAC2010A0F800C57D1C /* ScheduleInterfaceController.swift */; };
+		0A7BAFAF2010A11500C57D1C /* ScheduleDetailInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7BAFAE2010A11500C57D1C /* ScheduleDetailInterfaceController.swift */; };
+		0A7BAFB12010A13200C57D1C /* RecordInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7BAFB02010A13200C57D1C /* RecordInterfaceController.swift */; };
+		0A7BAFB32010A14D00C57D1C /* RecordRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7BAFB22010A14D00C57D1C /* RecordRow.swift */; };
+		0A7BAFB52010A16700C57D1C /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7BAFB42010A16700C57D1C /* Data.swift */; };
+		0A7BAFB72010A18700C57D1C /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7BAFB62010A18700C57D1C /* DateExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +87,13 @@
 		0A7BAF982010A01C00C57D1C /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		0A7BAF9A2010A01C00C57D1C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0A7BAF9C2010A01C00C57D1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0A7BAFAA2010A0D100C57D1C /* ScheduleRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleRow.swift; sourceTree = "<group>"; };
+		0A7BAFAC2010A0F800C57D1C /* ScheduleInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleInterfaceController.swift; sourceTree = "<group>"; };
+		0A7BAFAE2010A11500C57D1C /* ScheduleDetailInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleDetailInterfaceController.swift; sourceTree = "<group>"; };
+		0A7BAFB02010A13200C57D1C /* RecordInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordInterfaceController.swift; sourceTree = "<group>"; };
+		0A7BAFB22010A14D00C57D1C /* RecordRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordRow.swift; sourceTree = "<group>"; };
+		0A7BAFB42010A16700C57D1C /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		0A7BAFB62010A18700C57D1C /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +164,13 @@
 				0A7BAF982010A01C00C57D1C /* ExtensionDelegate.swift */,
 				0A7BAF9A2010A01C00C57D1C /* Assets.xcassets */,
 				0A7BAF9C2010A01C00C57D1C /* Info.plist */,
+				0A7BAFAA2010A0D100C57D1C /* ScheduleRow.swift */,
+				0A7BAFAC2010A0F800C57D1C /* ScheduleInterfaceController.swift */,
+				0A7BAFAE2010A11500C57D1C /* ScheduleDetailInterfaceController.swift */,
+				0A7BAFB02010A13200C57D1C /* RecordInterfaceController.swift */,
+				0A7BAFB22010A14D00C57D1C /* RecordRow.swift */,
+				0A7BAFB42010A16700C57D1C /* Data.swift */,
+				0A7BAFB62010A18700C57D1C /* DateExtensions.swift */,
 			);
 			path = "UHL WatchKit Extension";
 			sourceTree = "<group>";
@@ -298,8 +319,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A7BAFB32010A14D00C57D1C /* RecordRow.swift in Sources */,
 				0A7BAF992010A01C00C57D1C /* ExtensionDelegate.swift in Sources */,
 				0A7BAF972010A01C00C57D1C /* InterfaceController.swift in Sources */,
+				0A7BAFB12010A13200C57D1C /* RecordInterfaceController.swift in Sources */,
+				0A7BAFAF2010A11500C57D1C /* ScheduleDetailInterfaceController.swift in Sources */,
+				0A7BAFB72010A18700C57D1C /* DateExtensions.swift in Sources */,
+				0A7BAFAD2010A0F800C57D1C /* ScheduleInterfaceController.swift in Sources */,
+				0A7BAFAB2010A0D100C57D1C /* ScheduleRow.swift in Sources */,
+				0A7BAFB52010A16700C57D1C /* Data.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

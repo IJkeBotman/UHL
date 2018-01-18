@@ -9,6 +9,8 @@
 import WatchKit
 
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
+    
+    
 
     func applicationDidFinishLaunching() {
         // Perform any final initialization of your application.
@@ -33,6 +35,33 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
                 backgroundTask.setTaskCompletedWithSnapshot(false)
             case let snapshotTask as WKSnapshotRefreshBackgroundTask:
                 // Snapshot tasks have a unique completion call, make sure to set your expiration date
+                print("\n handling snapshot task \n")
+                let nextMatchDate = season.upcomingMatches.first?.date
+                let lastMatchExpiresTimeInterval = season.playedMatches.last?.date.timeIntervalSince(Date().yesterday)
+                let wkExtension = WKExtension.shared()
+                wkExtension.rootInterfaceController?.popToRootController()
+                
+                if let lastMatchExpiresTimeInterval = lastMatchExpiresTimeInterval, lastMatchExpiresTimeInterval > 0 {
+                    let expiration = Date().addingTimeInterval(lastMatchExpiresTimeInterval)
+                    wkExtension.rootInterfaceController?.pushController(withName: "RecordInterfaceControllerType", context: nil)
+                    snapshotTask.setTaskCompleted(restoredDefaultState: false, estimatedSnapshotExpiration: expiration, userInfo: nil)
+                    break
+                }
+                
+                if let nextMatchDate = nextMatchDate, nextMatchDate.timeIntervalSinceNow < Date().tomorrow.timeIntervalSinceNow {
+                    wkExtension.rootInterfaceController?.pushController(withName: "ScheduleInterfaceControllerType", context: nil)
+                    wkExtension.rootInterfaceController?.pushController(withName: "ScheduleDetailInterfaceControllerType", context: 0)
+                    snapshotTask.setTaskCompleted(restoredDefaultState: false, estimatedSnapshotExpiration: nextMatchDate, userInfo: nil)
+                    break
+                }
+                
+                if let nextMatchDate = nextMatchDate {
+                    wkExtension.rootInterfaceController?.pushController(withName: "ScheduleInterfaceControllerType", context: nil)
+                    let expiration = nextMatchDate.yesterday
+                    snapshotTask.setTaskCompleted(restoredDefaultState: false, estimatedSnapshotExpiration: expiration, userInfo: nil)
+                    break
+                }
+                
                 snapshotTask.setTaskCompleted(restoredDefaultState: true, estimatedSnapshotExpiration: Date.distantFuture, userInfo: nil)
             case let connectivityTask as WKWatchConnectivityRefreshBackgroundTask:
                 // Be sure to complete the connectivity task once you’re done.
